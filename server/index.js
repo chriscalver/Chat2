@@ -8,14 +8,13 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chriscalver.com",
+    origin: "https://chat2-1-lw5o.onrender.com",
     methods: ["GET", "POST"],
   },
 });
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
-
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
@@ -29,9 +28,9 @@ io.on("connection", (socket) => {
     console.log("User Disconnected", socket.id);
   });
 });
-
+  
 server.listen(8080, () => {
-  console.log("SERVER RUNNINGggggggggggg");
+  console.log("Server listening on 8080");
 });
 
 
