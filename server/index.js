@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chriscalver.com",
+    origin: "https://chat2-1-lw5o.onrender.com",
     methods: ["GET", "POST"],
   },
 });
@@ -29,5 +29,5 @@ io.on("connection", (socket) => {
   });
 });
 server.listen(8080, () => {
-  console.log("Server is listening on port 8080");
+  console.log("Server listening on 8080");
 });
