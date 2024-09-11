@@ -13,14 +13,11 @@ const io = new Server(server, {
   },
 });
 
-io.on("connection", (socket) => {  
+io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
-
   socket.on("join_room", (data) => {
-    socket.join(data.room);
-    console.log(`User with ID: ${socket.id} joined room: ${data.room}`);
-    console.log(`Data: ${data.username}`);
-
+    socket.join(data);
+    console.log(`User with ID: ${socket.id} joined room: ${data}`);
   });
 
   socket.on("send_message", (data) => {
@@ -30,7 +27,9 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id);
   });
+
 });
+
 server.listen(8080, () => {
   console.log("Server listening on port 8080");
 });
