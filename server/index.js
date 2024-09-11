@@ -22,8 +22,10 @@ io.on("connection", (socket) => {
     socket.join(data);
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
   });
-
+  
   socket.on("get_name", (data) => {
+    console.log("name:");
+
     console.log(data);
    // socket.join(data);
    // console.log(`User with ID: ${socket.id} joined room: ${data}`);
