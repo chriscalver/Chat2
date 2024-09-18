@@ -8,10 +8,11 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chriscalver.com",
+    origin: ["https://www.chriscalver.com", "https://chriscalver.com", "https://chriscalver.com/racer", "https://chriscalver.com/racer/", "https://chat2-1-lw5o.onrender.com", "http://chriscalver.com"],
     methods: ["GET", "POST"],
   },
 });
+
 
 var username = "";
 let chatlogs = [
